@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业</title>
+		<style>
+			.active{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 作业需求：点击列表中的哪一项，那么该项的文字变成红色 -->
+		<div id="app">
+			<ul style="cursor: pointer;">
+				<li @click="changeClasses(index)" :class="getClasses(index)" v-for="(m, index) in movies">{{index + '-' + m}}</li>
+			</ul>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el:'#app',
+				data:{
+					categoryIndex: -1,
+					movies:['海王','海尔兄弟','火影忍者','进击的巨人']
+				},
+				methods:{
+					getClasses:function(index){
+						return {active:this.categoryIndex == index}
+					},
+					changeClasses:function(index){
+						this.categoryIndex = index;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
