@@ -13,6 +13,7 @@
     <router-link router-link to="/home" tag="button" replace>首页</router-link>
     <router-link router-link to="/about" tag="button" replace>关于</router-link>
     <router-link router-link :to="'/user/'+userId" tag="button" replace>用户</router-link>
+    <router-link router-link :to="{path:'/profile',query:{name:'why',age:18,height:1.88}}" tag="button" replace>档案</router-link>
     <router-view></router-view>
   </div>
 </template>
